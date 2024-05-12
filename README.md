@@ -1,5 +1,5 @@
 # RXHunter
-Command line tool for searching reflected XSS vulnerabilities
+Python script to search for reflected XSS vulnerabilites
 ## Run
 To run rxhunter
 ```sh
