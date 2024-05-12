@@ -1,5 +1,9 @@
 #!/bin/env python3
 
+# RXHunter ~ by s0ck37
+# Python script to search for reflected XSS vulnerabilites
+# https://github.com/s0ck37/rxhunter
+
 import requests
 import argparse
 from time import sleep
@@ -138,7 +142,6 @@ def main():
         if value == "":
             pwarning(f"No default value for parameter {name} was given")
         is_reflected(url,name,value)
-
 
 if __name__ == "__main__":
     main()
