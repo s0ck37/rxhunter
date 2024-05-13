@@ -146,5 +146,5 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except error:
+    except Exception as error:
         perror(f"Error: {error}")
