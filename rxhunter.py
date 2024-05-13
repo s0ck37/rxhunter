@@ -76,10 +76,14 @@ def is_reflected(url,name,value):
 
     # Checking if the lengths increment
     last_length = results[0][1]
+    length_reflected = True
     for request in results:
         if request[1] < last_length:
             pwarning(f"Parameter {BLUE}{name}{RESET} is not reflected in response length")
+            length_reflected = False
             break
+    if length_reflected:
+        psuccess(f"Parameter {BLUE}{name}{RESET} is reflected in response length")
 
     # Checking if it is reflected in plain text
     check_value = generate_string(10)
