@@ -78,8 +78,8 @@ def is_reflected(url,name,value):
     last_length = results[0][1]
     for request in results:
         if request[1] < last_length:
-            perror(f"Parameter {BLUE}{name}{RESET} is not vulnerable")
-            return
+            pwarning(f"Parameter {BLUE}{name}{RESET} is not reflected in response length")
+            break
 
     # Checking if it is reflected in plain text
     check_value = generate_string(10)
@@ -144,4 +144,7 @@ def main():
         is_reflected(url,name,value)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except error:
+        perror(f"Error: {error}")
